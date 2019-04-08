@@ -16,7 +16,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      artistsList: [{}],
+      artistsList: [],
       detailData: {},
       activeID: '1',
       loadingList: true,
@@ -25,6 +25,7 @@ class App extends Component {
       detailError: false,
     }
     this.handleListClick = this.handleListClick.bind(this);
+    this.fetchArtistListData = this.fetchArtistListData.bind(this);
   }
   componentWillMount(){
     this.fetchArtistListData()
