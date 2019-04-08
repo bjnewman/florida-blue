@@ -32,12 +32,15 @@ code {
 }
 
 .artist-link {
+	line-height: 50px;
 	margin: auto;
 	text-decoration: none;
 	color: black;
 }
 
 .sidebar-image {
+	display: inline-block;
+	vertical-align: middle;
 	border-radius: 50%;
 	height: 40px;
 	width: 40px;

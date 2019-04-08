@@ -17,7 +17,7 @@ class ArtistList extends Component {
       console.log(artistList)
       const navs = artistList.map(artist => {
         console.log('mapping artists ' + artist.firstName);
-        return(<Nav.Item key={artist.artistID} className ='artist-item'> <Nav.Link className='artist-link' eventKey={artist.artistID}><img className='sidebar-image' src={artist.imageURL} alt={`${artist.firstName} ${artist.lastName}`}/> {`${artist.firstName} ${artist.lastName}`} </Nav.Link></Nav.Item>)
+        return(<Nav.Item key={artist.artistID} className ='artist-item'><Nav.Link className='artist-link' eventKey={artist.artistID}><img className='sidebar-image' src={artist.imageURL} alt={`${artist.firstName} ${artist.lastName}`}/> <span style={{margin: '0 auto'}}> {`${artist.firstName} ${artist.lastName}`} </span></Nav.Link></Nav.Item>)
       })
       return navs
     } else {

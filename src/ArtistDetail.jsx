@@ -24,7 +24,7 @@ class ArtistDetail extends Component {
 		return (<Fragment><h3> {`${artist.firstName} ${artist.lastName}`}</h3>
 			<img className='detail-image' alt={`${artist.firstName} ${artist.lastName}`} src={artist.imageURL} />
 			<p className = 'capitalize'> {artist.art}</p>
-			<p> {`${artist.dateOfBirth} ${ageFromBirthDate(artist.dateOfBirth)} years old `}</p>
+			<p> {` Born on ${artist.dateOfBirth} currently ${ageFromBirthDate(artist.dateOfBirth)} years old `}</p>
 			<p> {`Born in ${artist.placeOfBirth}`}</p></Fragment>)
 	}
 	render() {
