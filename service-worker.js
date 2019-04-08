@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bjnewman/florida-blue/precache-manifest.c0e6791597bb86d94cf9dfc6a5a44905.js"
+  "/florida-blue/precache-manifest.174179c49a3606a7303bd0f2b4192cb0.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/bjnewman/florida-blue/index.html", {
+workbox.routing.registerNavigationRoute("/florida-blue/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
