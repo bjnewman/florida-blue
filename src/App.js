@@ -11,6 +11,13 @@ import ArtistDetail from './ArtistDetail.jsx';
 // 4. If API error in full list (at /artists) display placeholder text and ask user to refresh page
 // 5. If API error in detailed view (at /artist/:id) change placeholder text, initially ask for refresh if enough time add reload button
 
+function handleFetchErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText)
+  }
+  return response
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -32,6 +39,7 @@ class App extends Component {
   }
   fetchArtistListData() {
     fetch('https://fb-assessment.glitch.me/artists')
+      .then(response => handleFetchErrors(response))
       .then(response => response.json())
       .then(responseJson => this.setState({artistsList: responseJson, loadingList: false, listError: false }))
       .catch(error => this.setState({listError: true}))
@@ -39,6 +47,7 @@ class App extends Component {
   handleListClick(artistID) {
     this.setState({ loadingDetail: true }, () => {
       fetch(`https://fb-assessment.glitch.me/artists/${artistID}`)
+      .then(response => handleFetchErrors(response))
       .then(response => response.json())
       .then(responseJson => this.setState({activeID: artistID, detailData: responseJson, loadingDetail: false}))
       .catch(error => this.setState({detailError: true}))
