@@ -12,3 +12,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*artist-item is parent for side menu, artist-link is child*/
+.list-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	max-width: 32%;
+	margin-right: 0;
+}
+.detail-container {
+	max-width: 67%;
+}
+.artist-item {
+	background-color: slategray;
+	height: 50px;
+	border: 1px solid black;
+	margin-bottom: 3px;
+}
+
+.artist-link {
+	margin: auto;
+	text-decoration: none;
+	color: black;
+}
+
+.sidebar-image {
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+}
+
+/*detail-parent is container*/
+.detail-parent {
+	margin-left: 33% ;
+	max-width: 66%;
+}
+.detail-image {
+	border-radius: 50%;
+	max-height: 150px;
+}
+
+.capitalize {
+	text-transform: capitalize;
+}
+
+

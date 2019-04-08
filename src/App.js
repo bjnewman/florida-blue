@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { TabContainer, Row} from 'react-bootstrap';
+import { TabContainer, Row } from 'react-bootstrap';
 import ArtistList from './ArtistList.jsx';
 import ArtistDetail from './ArtistDetail.jsx';
 
@@ -38,19 +38,19 @@ class App extends Component {
   }
   handleListClick(artistID) {
     this.setState({ loadingDetail: true }, () => {
-      fetch(`https://fb-assessment.glitch.me/artist/${artistID}`)
+      fetch(`https://fb-assessment.glitch.me/artists/${artistID}`)
       .then(response => response.json())
       .then(responseJson => this.setState({activeID: artistID, detailData: responseJson, loadingDetail: false}))
       .catch(error => this.setState({detailError: true}))
     })
   }
   render() {
-    let { activeID, activeArtistData } = this.state 
+    let { activeID, detailData } = this.state 
     let initialDetailView = activeID === '1' //all others are UUID-ish
     return (<TabContainer id='list-group-tabs' defaultActiveKey='first'>
         <Row> 
-          <ArtistList handleListClick={this.handleListClick} artistList={this.state.artistsList} loading={this.state.loadingList} activeID={this.state.activeID} error={this.state.listError} className='col-sm-4'/>
-          <ArtistDetail activeID={activeID} activeArtistData={activeArtistData} initial={initialDetailView} loading={this.state.loadingDetail} className='col-sm-8'/>
+          <ArtistList className='list-container' handleListClick={this.handleListClick} artistList={this.state.artistsList} loading={this.state.loadingList} activeID={this.state.activeID} error={this.state.listError} className='col-sm-4'/>
+          <ArtistDetail className='detail-container' activeID={activeID} activeArtistData={detailData} initial={initialDetailView} loading={this.state.loadingDetail} className='col-sm-8'/>
         </Row>
       </TabContainer>
     );
