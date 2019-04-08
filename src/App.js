@@ -31,29 +31,16 @@ class App extends Component {
   }
   fetchArtistListData() {
     fetch('https://fb-assessment.glitch.me/artists')
-      .then((response) => {
-        var responseJson = response.json();
-        console.log( "json respons is " + responseJson)
-      })
-      .then((responseJson) => {
-        this.setState({artistsList: responseJson, loadingList: false, listError: false })
-      })
-      .catch((error) => {
-        this.setState({listError: true})
-      })
+      .then(response => response.json())
+      .then(responseJson => this.setState({artistsList: responseJson, loadingList: false, listError: false }))
+      .catch(error => this.setState({listError: true}))
   }
   handleListClick(artistID) {
     this.setState({ loadingDetail: true }, () => {
       fetch(`https://fb-assessment.glitch.me/artist/${artistID}`)
-      .then((response) => {
-        var responseJson = response.json();
-      })
-      .then((responseJson) => {
-        this.setState({activeID: artistID, detailData: responseJson, loadingDetail: false})
-      })
-      .catch((error) => {
-        this.setState({detailError: true})
-      })
+      .then(response => response.json())
+      .then(responseJson => this.setState({activeID: artistID, detailData: responseJson, loadingDetail: false}))
+      .catch(error => this.setState({detailError: true}))
     })
   }
   render() {

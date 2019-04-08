@@ -27,7 +27,7 @@ class ArtistList extends Component {
     let {isLoading, listError, artistList} = this.props
     // display placeholder while loading and in case of API error
     let showList = !isLoading && !listError
-    let shouldMap = showList && (typeof artistList !== 'undefined') && artistList !== null
+    let shouldMap = showList && (typeof artistList !== 'undefined') && (artistList !== null)
     return (
       <Nav variant='pills' className='flex-column'>
       {(showList && shouldMap) ? artistMap(artistList) : placeholder()
