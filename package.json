@@ -2,7 +2,7 @@
   "name": "florida-blue",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/bjnewman/florida-blue",
+  "homepage": "https://bjnewman.github.io/florida-blue",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
